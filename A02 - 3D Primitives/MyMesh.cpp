@@ -275,8 +275,37 @@ void MyMesh::GenerateCone(float a_fRadius, float a_fHeight, int a_nSubdivisions,
 	Release();
 	Init();
 
-	// Replace this with your code
-	GenerateCube(a_fRadius * 2.0f, a_v3Color);
+	float fValue = a_fRadius * 0.5f;
+	float fValue = a_fHeight * 0.5f;
+	//3--2
+	//|  |
+	//0--1
+
+	vector3 point0(-fValue, -fValue, fValue); //0
+	vector3 point1(fValue, -fValue, fValue); //1
+	vector3 point2(fValue, fValue, fValue); //2
+	vector3 point3(-fValue, fValue, fValue); //3
+
+	vector3 point4(-fValue, -fValue, -fValue); //4
+	vector3 point5(fValue, -fValue, -fValue); //5
+	vector3 point6(fValue, fValue, -fValue); //6
+	vector3 point7(-fValue, fValue, -fValue); //7
+
+	AddTri(point0, point1, point2); //just filler info for now
+
+	//F
+	/*AddQuad(point0, point1, point3, point2);
+	//B
+	AddQuad(point5, point4, point6, point7);
+	//L
+	AddQuad(point4, point0, point7, point3);
+	//R
+	AddQuad(point1, point5, point2, point6);
+	//U
+	AddQuad(point3, point2, point7, point6);
+	//D
+	AddQuad(point4, point5, point0, point1);*/
+
 	// -------------------------------
 
 	// Adding information about color
